@@ -1,0 +1,57 @@
+:root {
+  --task-cover-width: 200px;
+  --task-cover-width-large: 325px;
+  --task-cover-aspect-ratio: 0.75;
+}
+
+.task-details {
+  display: grid;
+}
+
+.task-details-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.task-details-grid {
+  width: fit-content;
+  display: grid;
+  align-content: flex-start;
+  align-items: center;
+  grid-gap: 1rem;
+  grid-template-columns: auto auto;
+}
+
+.task-details-btn-grid {
+  display: flex;
+  justify-items: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  grid-gap: .5rem;
+  margin-top: 6.5rem;
+}
+
+.task-details-user-button {
+  grid-area: user;
+  justify-self: stretch;
+}
+
+.task-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.task-name {
+  font-size: 1.5rem;
+}
+
+.task-list a {
+  color: var(--color-btn-primary-background);
+  text-decoration: none;
+}
+
+.task-list a :hover {
+  color: var(--color-btn-primary-background-dark);
+}

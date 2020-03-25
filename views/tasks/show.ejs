@@ -1,0 +1,16 @@
+<h2 class="page-header"><%= task.taskName %></h2>
+<div class="task-details">
+  <div class="task-details-grid">
+    <div class="task-details-label">User:</div>
+    <div><%= task.user.name %></div>
+    <div class="task-details-label">Scheduled At:</div>
+    <div><%= task.scheduledDate.toDateString() %></div>
+    <div class="task-details-label">Description:</div>
+    <div><%= task.description %></div>
+  </div>
+  <div class="task-details-btn-grid">
+    <a class="btn btn-primary" href="/tasks/<%= task.id %>/edit">Edit</a>
+    <%- include('../partials/deleteForm', { url: `/tasks/${task.id}` }) %>
+    <a class="btn btn-primary task-details-user-button" href="/users/<%= task.user.id %>">View User</a>
+  </div>
+</div>

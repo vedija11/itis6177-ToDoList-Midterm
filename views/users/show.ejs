@@ -1,0 +1,18 @@
+<h2 class="page-header"><%= user.name %></h2>
+<div class="btn-row">
+  <a class="btn btn-primary" href="/users/<%= user.id %>/edit">Edit</a>
+  <%- include('../partials/deleteForm',
+              { url: `/users/${user.id}` }) %>
+</div>
+<% if (tasksByUser.length > 0) { %>
+  <h2><u>Tasks By User</u></h2>
+  <div class="task-list">
+    <% tasksByUser.forEach(task => { %>
+      <a href="/tasks/<%= task.id %>">
+        <div class="task-row">
+          <div class="task-name"><%= task.taskName %></div>
+        </div>
+      </a>
+    <% }) %>
+  </div>
+<% } %>

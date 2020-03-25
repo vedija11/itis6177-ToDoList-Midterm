@@ -1,0 +1,34 @@
+<div class="form-row">
+    <div class="form-item">
+      <label>Task Name</label>
+      <input type="text" name="taskName" value="<%= task.taskName %>">
+    </div>
+    <div class="form-item">
+      <label>User</label>
+      <select name="user">
+        <% users.forEach(user => { %>
+          <% if (user.id === task.user) { %>
+            <option selected label="<%= user.name %>" value="<%= user.id %>">
+          <% } else { %>
+            <option label="<%= user.name %>" value="<%= user.id %>">
+          <% } %>
+        <% }) %>
+      </select>
+    </div>
+  </div>
+  
+  <div class="form-row">
+    <div class="form-item">
+      <label>Schedule At</label>
+      <input id="sDate" type="date" name="scheduledDate"
+            value="<%= task.scheduledDate == null ? '' : task.scheduledDate.toISOString().split('T')[0] %>"
+            min="2020-03-25">
+    </div>
+  </div>
+  
+  <div class="form-row">
+    <div class="form-item">
+      <label>Description</label>
+      <textarea name="description"><%= task.description %></textarea>
+    </div>
+  </div>
